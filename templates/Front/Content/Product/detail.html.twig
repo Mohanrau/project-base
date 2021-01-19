@@ -145,6 +145,13 @@
                                 {% endif %}
                             </dl>
                         {% endapply %}
+                        {% if productView.categories %}
+                            <ul>
+                                {% for category in productView.categories %}
+                                    <li>{{ category.category.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </div>
                 </div>
 

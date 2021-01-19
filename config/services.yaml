@@ -123,3 +123,16 @@ services:
     Psr\Http\Message\ServerRequestInterface:
         factory: ['@Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory', 'createRequest']
         arguments: ['@=service("request_stack").getMasterRequest()']
+
+    Shopsys\ReadModelBundle\Product\Detail\ProductDetailViewFactory:
+        alias: App\ReadModel\Product\Detail\ProductDetailViewFactory
+
+    Shopsys\ReadModelBundle\Product\Detail\ProductDetailViewElasticsearchFactory:
+        alias: App\ReadModel\Product\Detail\ProductDetailViewElasticsearchFactory
+
+
+    Shopsys\FrameworkBundle\Model\Category\CategoryFacade:
+        alias: App\Model\Category\CategoryFacade
+
+    Shopsys\FrameworkBundle\Model\Category\CategoryRepository:
+        alias: App\Model\Category\CategoryRepository
