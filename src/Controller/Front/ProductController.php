@@ -126,6 +126,7 @@ class ProductController extends FrontBaseController
      */
     public function detailAction($id)
     {
+        /** @var \App\Model\Product\Product $product */
         $product = $this->productOnCurrentDomainFacade->getVisibleProductById($id);
 
         if ($product->isVariant()) {
@@ -138,6 +139,7 @@ class ProductController extends FrontBaseController
 
         return $this->render('Front/Content/Product/detail.html.twig', [
             'product' => $product,
+            'oreo' => $this->categoryFacade->getProductVisibleAndListableProductCategoryDomains($product, $this->domain->getId()),
             'accessories' => $accessories,
             'variants' => $variants,
             'productMainCategory' => $productMainCategory,

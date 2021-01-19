@@ -105,3 +105,9 @@ services:
     Psr\Http\Message\ServerRequestInterface:
         factory: ['@Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory', 'createRequest']
         arguments: ['@=service("request_stack").getMasterRequest()']
+
+    Shopsys\FrameworkBundle\Model\Category\CategoryFacade:
+        alias: App\Model\Category\CategoryFacade
+
+    Shopsys\FrameworkBundle\Model\Category\CategoryRepository:
+        alias: App\Model\Category\CategoryRepository

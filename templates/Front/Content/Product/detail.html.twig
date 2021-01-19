@@ -143,6 +143,13 @@
                                 {% endif %}
                             </dl>
                         {% endapply %}
+                        {% if oreo %}
+                        <ul>
+                            {% for category in oreo %}
+                                <li>{{ category.category.name }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
                     </div>
                 </div>
 
